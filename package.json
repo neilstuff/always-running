@@ -1,0 +1,47 @@
+{
+  "name": "electron-runner",
+  "version": "1.0.0",
+  "description": "Electron runner application",
+  "main": "main.js",
+  "scripts": {
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --publish never",
+    "start": "electron ."
+  },
+  "build": {
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesourorange/electron-runner.git"
+  },
+  "keywords": [
+    "Electron",
+    "two.js",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "electron-disable-file-drop": "^1.0.2",
+    "phaser": "^3.23.0"
+  },
+  "devDependencies": {
+    "electron": "^8.2.3",
+    "electron-builder": "^22.5.1"
+  },
+  "bugs": {
+    "url": "https://github.com/thesourorange/electron-runner/issues"
+  },
+  "homepage": "https://github.com/thesourorange/electron-runner#readme"
+}
