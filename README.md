@@ -1,6 +1,6 @@
 Top-down 2D tile based game engnine with infinite procedural chunk generation using only browser JavaScript.
 
-**This is just an experiment and not complete in any way**
+**This is just an experiment and not completed in any way**
 
 ## Installation
 Just clone and open _index.html_ in your browser.
