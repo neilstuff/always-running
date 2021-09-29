@@ -12,22 +12,18 @@ var mainWindow = null;
 
 function createWindow () {
 
-  mainWindow = new BrowserWindow({width: 980, height: 580, resizable: false, autoHideMenuBar: true})
-  mainWindow.setMenu(null);
+    mainWindow = new BrowserWindow({width: 980, height: 580, resizable: false, autoHideMenuBar: true})
+    mainWindow.setMenu(null);
   
-  if (config.mode == "debug") {
-    mainWindow.webContents.openDevTools();
-  }
- 
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
+    if (config.mode == "debug") {
+        mainWindow.webContents.openDevTools();
+    }
+    
+    mainWindow.loadURL(`file:///${path.join(__dirname, 'index.html')}`);
 
-  mainWindow.on('closed', () => {
-    mainWindow = null
-  })
+    mainWindow.on('closed', () => {
+        mainWindow = null
+    })
 
 }
  
@@ -38,7 +34,7 @@ app.on('window-all-closed',  () => {
 })
 
 app.on('activate', () => {
-  if (mainWindow === null) {
-    createWindow()
-  }
+    if (mainWindow === null) {
+        createWindow()
+    }
 })
